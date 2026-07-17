@@ -152,7 +152,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 24px 80px;
+  padding: 60px 24px 20px;
 }
 
 #col-2{
@@ -202,10 +202,11 @@ body {
 @media (min-width:1025px) {
   .hero-bottom {
     width: 100%;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: minmax(180px, 1fr) minmax(360px, 1.8fr) minmax(180px, 1fr);
     gap: 24px;
-    padding: 20px 40px 40px;
+    padding: 20px 10px 40px;
     margin-top: 20px;
     margin-bottom: 60px;
     align-items: center;
@@ -259,7 +260,7 @@ body {
   width: min(100%, 1300px);
   max-width: 1300px;
   height: auto;
-  margin: -140px auto 0;
+  margin: -12 0px auto 0;
 }
 
 #hero .hero-content h1 {
@@ -335,7 +336,7 @@ body {
     font-size: 14px;
   }
   .btn {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     display: inline-block;
     padding: 22px 42px;
     border-radius: 40px;
@@ -357,24 +358,22 @@ body {
 
 /* SCROLL */
 .logo-scroll {
-  padding-top: 75px;
   width: 1200px;
-  max-width: 95%;
+  max-width: 100%;
   margin: 0 auto;
-  padding-bottom: 75px;
 }
-
+/* 
 @media (max-width: 1024px) {
   .logo-scroll {
     padding-top: 100px;
   }
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .logo-scroll {
     padding-top: 60px;
   }
-}
+} */
 
 .scroll-row {
   overflow: hidden;
@@ -426,7 +425,7 @@ body {
 #testimonials {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 24px 20px;
+  padding: 10px 24px 8px;
 }
 
 .section-heading {
@@ -461,7 +460,7 @@ body {
 
 .projects-track {
   position: relative;
-  min-height: 420px;
+  min-height: 320px;
 }
 
 .project-slide {
@@ -497,15 +496,21 @@ body {
 }
 
 .gradient-one {
-  background: linear-gradient(135deg, #e7541f 0%, #2f50d4 100%);
+  background:
+    /* linear-gradient(135deg, rgba(242, 139, 28, 0.8) 0%, rgba(31, 79, 159, 0.8) 45%, rgba(15, 23, 42, 0.9) 100%), */
+    url('https://edgecliffelectrical.com/wp-content/uploads/2025/11/hero-bg.webp') center/cover no-repeat;
 }
 
 .gradient-two {
-  background: linear-gradient(135deg, #2f50d4 0%, #111 100%);
+  background:
+    /* linear-gradient(135deg, rgba(10, 40, 90, 0.82) 0%, rgba(20, 20, 20, 0.88) 100%), */
+    url('https://i0.wp.com/freedomhouseglobal.org/wp-content/uploads/2025/10/Dr.-Abraham-sts-png-scaled.png?resize=1080%2C1512&ssl=1') top center/contain no-repeat;
 }
 
 .gradient-three {
-  background: linear-gradient(135deg, #e7541f 0%, #111 100%);
+  background:
+    /* linear-gradient(135deg, rgba(12, 80, 120, 0.8) 0%, rgba(16, 16, 16, 0.9) 100%), */
+    url('https://1800washed.com.au/wp-content/uploads/2024/12/1800-washed-logos-FA-01.2-1024x535.webp') center/cover no-repeat;
 }
 
 .project-content h3 {
@@ -541,20 +546,35 @@ body {
   border-radius: 50%;
   background: linear-gradient(135deg, #e7541f, #2f50d4);
   color: #fff;
-  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.slider-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 .slider-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
 }
 
 .slider-dots {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 24px;
+  margin-top: 12px;
+  margin-bottom: 0;
 }
 
 .slider-dot {
@@ -610,8 +630,8 @@ body {
 }
 
 .site-footer {
-  margin-top: 100px;
-  padding: 80px 24px 28px;
+  /* margin-top: 100px; */
+  padding: 60px 24px 28px;
   border-top: 1px solid rgba(255,255,255,0.12);
   background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
 }
@@ -686,15 +706,20 @@ body {
 
 @media (max-width: 900px) {
   .projects-slider {
-    grid-template-columns: 1fr;
-  }
-
-  .slider-btn {
-    display: none;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 12px;
   }
 
   .projects-track {
     min-height: 470px;
+  }
+
+  .slider-btn {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    justify-self: center;
+    margin: 0 auto;
   }
 
   .project-slide {
@@ -707,9 +732,18 @@ body {
 }
 
 @media (max-width: 768px) {
+  .projects-slider {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .slider-btn {
+    width: 42px;
+    height: 42px;
+  }
+
   #projects,
   #testimonials {
-    padding: 60px 20px 40px;
+    padding: 60px 20px 20px;
   }
 
   .h-projects,
@@ -747,7 +781,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 40px 80px;
+  padding: 10px 40px 40px;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto 100px;
@@ -763,11 +797,11 @@ body {
   /* background: linear-gradient(to bottom, #fff, #888);
   background-clip: text;
   -webkit-text-fill-color: transparent; */
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 #about p {
-  font-size: 32px;
+  font-size: 28px;
   /* font-weight: 400; */
   letter-spacing: 1px;
   line-height: 1.4;
@@ -814,6 +848,10 @@ body {
 }
 
 /********************************************** SERVICES SECTION **********************************************/
+/* .con{
+  width: auto;
+  background-color: #fff;
+} */
 
 #services {
   display: flex;
@@ -824,8 +862,7 @@ body {
   background-color: #fff;
   border-radius: 25px;
   padding: 100px 40px 80px;
-  max-width: 100%;
-  width: 100%;
+  width: auto;
   margin: 0 auto;
 }
 
@@ -840,12 +877,14 @@ body {
   display: grid;
   grid-template-columns: repeat(1, 1fr); /* 1 column */
   gap: 30px;
-  width: 100%;
-  max-width: 1200px;
+  width: min(100%, var(--content-max-width));
+  max-width: var(--content-max-width);
 }
 
 /* SERVICE CARDS */
 .service-card {
+  /* width: 100%; */
+  max-width: 1200px;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 20px;
@@ -941,8 +980,8 @@ body {
   display: grid;
   grid-template-columns: repeat(1, 1fr); /* 1 column */
   gap: 30px;
-  width: 100%;
-  max-width: 1200px;
+  width: min(100%, var(--content-max-width));
+  max-width: var(--content-max-width);
 }
 
 
@@ -952,7 +991,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 40px 80px;
+  padding: 100px 40px 40px;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -1049,7 +1088,7 @@ body {
 @media (max-width: 768px) {
   #projects {
     padding: 40px 20px;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
   }
 
   #projects h2 {
@@ -1065,8 +1104,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 40px 80px;
-  max-width: 100%;
+  padding: 0px 40px 80px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   /* background-color: #fff; */
@@ -1088,7 +1127,7 @@ body {
 @media (max-width: 1024px) {
   #testimonials {
     padding: 80px 30px 60px;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
   }
 
   #testimonials h2 {
@@ -1100,8 +1139,8 @@ body {
 
 @media (max-width: 768px) {
   #testimonials {
-    padding: 60px 20px 40px;
-    margin-bottom: 60px;
+    padding: 0px 20px 40px;
+    /* margin-bottom: 60px; */
   }
 
   #testimonials h2 {
